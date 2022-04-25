@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './components/Home';
 import './App.css';
+import { QuestionsCard } from './components/QuestionsCard';
+import { ShowResult } from './components/ShowResult';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div data-testid="app-component" className="App">
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/questions/:prelang/" element={<QuestionsCard />} />
+                <Route path="/result" element={<ShowResult />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
