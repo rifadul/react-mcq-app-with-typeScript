@@ -38,7 +38,6 @@ export const QuestionsCard: React.FC = () => {
     const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
     const [result, setResult] = useState(false);
     let navigate = useNavigate();
-    console.log('ddd', questions[0].mcqData.length);
 
     const nextQustion = () => {
         setCurrentQuestionNo(currentQuestionNo + 1);
@@ -64,16 +63,12 @@ export const QuestionsCard: React.FC = () => {
         console.log('sd', userAnswers, answerObject.question);
 
         if (userAnswers.length > 0) {
-            console.log('come');
-            console.log('come', userAnswers[userAnswers.length - 1]);
 
             if (userAnswers[userAnswers.length - 1].question === question) {
-                console.log('ina');
                 userAnswers.splice(-1);
             }
             setUserAnswers((prev) => [...prev, answerObject]);
         } else {
-            console.log('else');
             setUserAnswers((prev) => [...prev, answerObject]);
         }
         setSelected(answer);

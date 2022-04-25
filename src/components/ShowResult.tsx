@@ -15,6 +15,8 @@ export const ShowResult = () => {
     const [finalResult, setFinalResult] = useState<any>(results);
     const [score, setScore] = useState(0);
     let navigate = useNavigate();
+    console.log(finalResult);
+    
 
     const findScore = () => {
         // eslint-disable-next-line array-callback-return
@@ -31,7 +33,7 @@ export const ShowResult = () => {
     }, []);
 
     return (
-        <Container maxWidth="sm" sx={{ my: 10 }} data-testid="home-component">
+        <Container maxWidth="sm" sx={{ my: 10 }} data-testid="result-component">
             <Card>
                 <CardHeader
                     title="Final Result"
