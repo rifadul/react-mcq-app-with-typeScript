@@ -12,6 +12,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/questions/:prelang/" element={<QuestionsCard />} />
                 <Route path="/result" element={<ShowResult />} />
+                <Route path="*" element={<p>404 Page Not Found</p>} />
             </Routes>
         </div>
     );
